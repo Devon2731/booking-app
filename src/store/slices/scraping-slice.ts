@@ -1,5 +1,5 @@
-import { FlightType } from "../types/flight";
-import { HotelType } from "../types/hotel";
+import { FlightType } from "../../types/flight";
+import { HotelType } from "../../types/hotel";
 import { StateCreator } from "zustand";
 
 export interface ScrapingSlice {

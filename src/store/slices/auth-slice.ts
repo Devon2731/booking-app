@@ -1,4 +1,4 @@
-import { UserType } from "@/types/user";
+import { UserType } from "../../types/user";
 import { StateCreator } from "zustand";
 
 export interface AuthSlice {
