@@ -41,7 +41,7 @@ export const register = () => {
                     await page.goto(job.data.url);
                     console.log ("Navigated! Scaring page content...");
                     const packages = await startLocationScraping(page);
-                    await prisma.jobs.upadate({
+                    await prisma.jobs.update({
                         where: {
                             id: job.data.id
                         },
@@ -60,7 +60,7 @@ export const register = () => {
                                 data: {
                                     url: `https://packages.yatra.com/holidays/intl/details.htm?packageId=${pkg?.id}`,
                                     jobType: {
-                                        tyoe : "package",
+                                        type : "package",
                                     },
                                 },
                             }); // Add a comma here
