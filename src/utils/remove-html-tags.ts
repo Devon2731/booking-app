@@ -1,8 +1,9 @@
 export function removeHtmlTags(inputString: string) {
-    // Define the regular expression pattern
-    const htmlTagsRegex = /<[^>]*>/g;
+  // Define a regular expression pattern to match HTML tags
+  const htmlTagsRegex = /<[^>]*>/g;
 
-    // Use the regular expression to remove HTML tags
-    const stringWithoutHtml = inputString.replace(htmlTagsRegex, "");
-    return stringWithoutHtml;
+  // Replace HTML tags with an empty string
+  const stringWithoutHtml = inputString.replace(htmlTagsRegex, "");
+
+  return stringWithoutHtml;
 }
