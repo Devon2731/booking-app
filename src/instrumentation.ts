@@ -1,3 +1,4 @@
+'use client'
 import { startLocationScraping } from "./scraping/locationScraping";
 import prisma from "./lib/prisma";
 import { startPackageScraping } from "./scraping/packageScraping";
@@ -5,7 +6,7 @@ import { startFlightScraping } from "./scraping/flightsScraping";
 import { startHotelScraping } from "./scraping/hotelScraping";
 // import { env } from "process";
 
-const SBR_WS_ENDPOINT = process.env.SBR_WS_ENDPOINT;
+const SBR_WS_ENDPOINT = process.env.NEXT_SBR_WS_ENDPOINT;
 
 export const register = async () => {
   //This if statement is important, read here: https://nextjs.org/docs/app/building-your-application/optimizing/instrumentation
@@ -19,7 +20,7 @@ export const register = async () => {
       const data = await prisma.admin.create({
         data: {
           email: "superflyadmin@superfly.com",
-          password: process.env.SUPERFLY_ADMIN_PASSWORD || "",
+          password: process.env.NEXT_SUPERFLY_ADMIN_PASSWORD || "",
         },
       });
       console.log({ data });

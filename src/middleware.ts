@@ -4,7 +4,7 @@ import { jwtVerify, decodeJwt } from "jose";
 import type { NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  const secret = new TextEncoder().encode(process.env.JWT_KEY as string);
+  const secret = new TextEncoder().encode(process.env.NEXT_JWT_KEY as string);
   try {
     if (!request.url.includes("/login")) {
       const token = request.cookies.get("access_token");
